@@ -12,7 +12,7 @@ const Contacto = () => {
       </ul>
       <div>
         <img
-          src="./src/imagenes/asesores.jpg" // Reemplaza con la ruta real de tu imagen
+          src="./src/imagenes/asesores.jpg" 
           alt="Descripción de la imagen"
           style={{ maxWidth: '40%', height: 'auto' }}
         />

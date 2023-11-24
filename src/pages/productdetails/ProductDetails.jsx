@@ -16,7 +16,6 @@ const ProductDetails = () => {
       <h2>{product.nameProduct}</h2>
       <img src={product.img} alt={product.nameProduct} />
       <p>Precio: $ {product.price}</p>
-      {/* Agrega más detalles según sea necesario */}
     </div>
   );
 };

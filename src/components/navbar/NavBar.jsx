@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/src/imagenes/vector logo2.png" alt="Logo de Autos Platinum" />
+        <img src="../imagenes/logo.png" alt="Logo de Autos Platinum" />
       </div>
       <div className="navbar-title">
         Autos Platinum
@@ -16,8 +16,7 @@ const NavBar = () => {
         <ul>
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/category/vehiculos">Vehículos</Link></li>
-          <li><Link to="/Contacto">Contacto</Link></li>
-          {/* Agrega más enlaces con el mismo formato si es necesario */}
+          <li><Link to="/contacto">Contacto</Link></li>
         </ul>
       </div>
       <CartWidget />

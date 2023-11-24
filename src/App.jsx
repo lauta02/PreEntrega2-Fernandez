@@ -1,31 +1,25 @@
-import React, { useState } from 'react';
+// App.jsx
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductDetails from './pages/productdetails/ProductDetails';
-import Navbar from './components/navbar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer';
-import CartWidget from './components/cartwidget/CartWidget';
+import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailContainer';
+import Catalogo from './components/catalogo/Catalogo';
 import Contacto from './components/contacto/Contacto';
 
 const App = () => {
-  // Ahora puedes usar useState
-  const [allProducts, setAllProducts] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [countProducts, setCountProducts] = useState(0);
-
   return (
     <Router>
-      <CartProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/cart" element={<CartWidget />} />
-          <Route path="/contacto" element={<Contacto />} />
-          {/* Agrega una ruta para los detalles del producto */}
-          <Route path="/product/:id" element={<ProductDetails/>} />
-        </Routes>
-      </CartProvider>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;

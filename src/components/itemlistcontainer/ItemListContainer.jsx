@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { data } from '../../data';
 import './ItemListContainer.css';
 
-const ItemListContainer = () => ({
+const ItemListContainer = ({
   allProducts,
   setAllProducts,
   countProducts,
@@ -38,7 +39,7 @@ const ItemListContainer = () => ({
           <div className='product-info'>
             <h2>{product.nameProduct}</h2>
             <p className='product-price'>$ {product.price}</p>
-            <button onClick={() => onAddProduct(product)}>Agregar al Carrito</button>
+            <Link to={`/item/${product.id}`}>Ver más</Link>
           </div>
         </div>
       ))}
@@ -46,4 +47,4 @@ const ItemListContainer = () => ({
   );
 };
 
-
+export default ItemListContainer;
