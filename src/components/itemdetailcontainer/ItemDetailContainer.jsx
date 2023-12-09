@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { data } from '../../data';
+import ItemDetail from './ItemDetail';
+import { CartContext } from '../context/CartContext';
+import { data } from '../../data'; // Importa la fuente de datos
+import '../styles/styles.css'; // Asegúrate de importar tu archivo de estilos
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const foundProduct = data.find((item) => item.id === parseInt(id, 10));
@@ -16,14 +20,16 @@ const ItemDetailContainer = () => {
     }
   }, [id]);
 
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
   return (
     <div>
       {product ? (
         <div>
-          <h2>{product.nameProduct}</h2>
-          <img src={product.img} alt={product.nameProduct} />
-          <p>Precio: ${product.price}</p>
-          <p>Descripción: {product.description}</p>
+          <ItemDetail product={product} />
+          <button onClick={handleAddToCart}>Agregar al carrito</button>
         </div>
       ) : (
         <p>Cargando detalles del producto...</p>

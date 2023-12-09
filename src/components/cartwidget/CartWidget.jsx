@@ -1,26 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Checkout from '../checkout/Checkout';
+import { useCart } from '../context/CartContext';
 import './CartWidget.css';
 
 const CartWidget = () => {
+  const { cart, removeFromCart } = useCart();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isCheckoutOpen, setCheckoutOpen] = useState(false);
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleRemoveFromCart = (productId) => {
+    removeFromCart(productId);
+  };
+
+  const handlePurchaseClick = () => {
+    setCheckoutOpen(true);
+  };
+
+  const handlePurchaseComplete = () => {
+    setCheckoutOpen(false);
+  };
+
   return (
-    <div className='container-icon cart-icon-white'>
-      <div className='container-cart-icon'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth='2'
-          stroke='#000'
-          className='icon-cart'
-        >
-          <circle cx='9' cy='21' r='1'></circle>
-          <circle cx='20' cy='21' r='1'></circle>
-          <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>
-        </svg>
-        <div className='count-products'>
-          <span id='contador-productos'>5</span> 
-        </div>
+    <div className="cart-widget">
+      <div className="cart-icon" onClick={handleDropdownToggle}>
+        <FontAwesomeIcon icon={faShoppingCart} />
+        {cart.length > 0 && <span className="cart-counter">{cart.length}</span>}
       </div>
+      {isDropdownOpen && (
+        <div className="cart-dropdown">
+          {cart.length > 0 ? (
+            <ul>
+              {cart.map((product) => (
+                <li key={product.id}>
+                  <strong>{product.name}</strong> - Precio: ${product.price} - Cantidad: {product.quantity}
+                  <button className="button button-remove-from-cart" onClick={() => handleRemoveFromCart(product.id)}>
+                    Eliminar del carrito
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No hay productos en el carrito</p>
+          )}
+          <button className="button button-checkout" onClick={handlePurchaseClick}>
+            Comprar
+          </button>
+        </div>
+      )}
+
+      {isCheckoutOpen && (
+        <Checkout onPurchaseComplete={handlePurchaseComplete} />
+      )}
     </div>
   );
 };
