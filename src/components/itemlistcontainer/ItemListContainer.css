@@ -7,11 +7,11 @@
   }
   
   .product-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    margin: 10px; /* Agrega un margen para separar las cajas */
+    border: 1px solid #ccc; /* Agrega un borde para visualización */
+    display: inline-block; /* Permite que las cajas estén en línea */
   }
   
   .product-item:hover {
@@ -19,10 +19,16 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
+  .product-item figure {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+  }
+  
   .product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .product-info {
@@ -38,3 +44,35 @@
     font-family: 'Poppins', sans-serif; 
   }
   
+  .product-list-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .product-item {
+    width: 300px; /* Ajusta el ancho del contenedor según tus necesidades */
+    height: 400px; /* Ajusta la altura del contenedor según tus necesidades */
+    border: 1px solid #ccc; /* Agrega un borde para resaltar el contenedor */
+    margin: 10px; /* Agrega un margen para separar los contenedores */
+    padding: 10px; /* Agrega un espacio interno dentro del contenedor */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total del contenedor */
+  }
+  
+  .product-info {
+    text-align: center;
+  }
+  
+  .product-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .product-info p {
+    font-weight: bold;
+  }
+  
+  .product-info a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }

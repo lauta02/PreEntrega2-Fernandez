@@ -3,15 +3,21 @@ import { Link } from 'react-router-dom';
 import CartWidget from '../cartwidget/CartWidget.jsx';
 import { useCart } from '../context/CartContext';
 import CartModal from '../cartmodal/CartModal';
+import FilterModal from '../filtermodal/FilterModal'; // Agrega la importación
 
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ allProducts, setFilteredProducts }) => {
   const { cart } = useCart();
   const [isCartModalOpen, setCartModalOpen] = useState(false);
+  const [isFilterModalOpen, setFilterModalOpen] = useState(false);
 
   const toggleCartModal = () => {
     setCartModalOpen(!isCartModalOpen);
+  };
+
+  const toggleFilterModal = () => {
+    setFilterModalOpen(!isFilterModalOpen);
   };
 
   return (
@@ -27,8 +33,21 @@ const NavBar = () => {
           <li><Link to="/contacto">Contacto</Link></li>
         </ul>
       </div>
+      <button onClick={toggleFilterModal}>Filtrar</button>
       <CartWidget onClick={toggleCartModal} />
       {isCartModalOpen && <CartModal onClose={toggleCartModal} />}
+      {isFilterModalOpen && (
+        <FilterModal
+          isOpen={isFilterModalOpen}
+          onClose={toggleFilterModal}
+          uniqueBrands={allProducts.map(product => product.brand)}
+          onFilter={(brand) => {
+            const filteredProducts = allProducts.filter(product => product.brand === brand);
+            setFilteredProducts(filteredProducts);
+            toggleFilterModal();
+          }}
+        />
+      )}
     </nav>
   );
 };

@@ -4,17 +4,27 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const addToCart = (product) => {
+    console.log(product); // Agrega esto para depurar
     setCart((prevCart) => [...prevCart, product]);
+    setTotal((prevTotal) => prevTotal + parseFloat(product.price));
   };
 
   const removeFromCart = (productId) => {
+    const removedProduct = cart.find((product) => product.id === productId);
+
+    if (removedProduct) {
+      setTotal((prevTotal) => prevTotal - parseFloat(removedProduct.price));
+    }
+
     setCart((prevCart) => prevCart.filter((product) => product.id !== productId));
   };
 
   const clearCart = () => {
     setCart([]);
+    setTotal(0);
   };
 
   const buy = () => {
@@ -24,7 +34,7 @@ const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, buy }}>
+    <CartContext.Provider value={{ cart, total, addToCart, removeFromCart, clearCart, buy }}>
       {children}
     </CartContext.Provider>
   );
