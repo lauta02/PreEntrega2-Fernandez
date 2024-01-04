@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const [isFilterMenuVisible, setIsFilterMenuVisible] = useState(false);
 
   const onAddProduct = (product) => {
-    // Lógica para agregar productos al carrito
+    
   };
 
   const filterByBrand = (brand) => {

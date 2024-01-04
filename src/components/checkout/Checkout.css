@@ -14,20 +14,20 @@
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    width: 300px; /* Ajusta según tus necesidades */
+    width: 300px; 
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .checkout-modal h2 {
     margin-bottom: 20px;
-    color: #000; /* Color del texto en negro */
+    color: #000; 
   }
   
   .checkout-modal label {
     display: block;
     margin-bottom: 10px;
-    color: #000; /* Color del texto en negro */
+    color: #000; 
   }
   
   .checkout-modal input {
@@ -56,7 +56,7 @@
   }
   
   .button-primary {
-    color: #000; /* Color del texto en negro */
+    color: #000; 
     background-color: #007bff;
     border: 2px solid #007bff;
   }
@@ -67,7 +67,7 @@
   }
   
   .button-secondary {
-    color: #000; /* Color del texto en negro */
+    color: #000; 
     background-color: #e6e6e6;
     border: 2px solid #ccc;
   }

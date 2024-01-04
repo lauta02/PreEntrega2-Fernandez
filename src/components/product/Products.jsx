@@ -19,12 +19,12 @@ export const Products = () => {
   return (
     <div>
       <h1>Products</h1>
-      {/* Puedes renderizar tus productos aquí según sea necesario */}
+      
       {products.map(product => (
         <div key={product.id}>
           <h2>{product.name}</h2>
           <p>Precio: ${product.price}</p>
-          {/* Agrega más información del producto si es necesario */}
+          
         </div>
       ))}
     </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CartWidget from '../cartwidget/CartWidget.jsx';
 import { useCart } from '../context/CartContext';
 import CartModal from '../cartmodal/CartModal';
-import FilterModal from '../filtermodal/FilterModal'; // Agrega la importación
+import FilterModal from '../filtermodal/FilterModal';
 
 import './NavBar.css';
 

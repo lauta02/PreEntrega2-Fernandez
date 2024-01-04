@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import { CartContext } from '../context/CartContext';
-import { data } from '../../data'; // Importa la fuente de datos
-import '../styles/styles.css'; // Asegúrate de importar tu archivo de estilos
+import { data } from '../../data'; 
+import '../styles/styles.css'; 
 
 const ItemDetailContainer = () => {
   const { id } = useParams();

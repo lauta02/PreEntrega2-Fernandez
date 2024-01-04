@@ -12,7 +12,7 @@
 
 .button-primary {
   color: #fff;
-  background-color: #4caf50; /* Verde */
+  background-color: #4caf50; 
   border: 2px solid #4caf50;
 }
 
@@ -23,7 +23,7 @@
 
 .button-secondary {
   color: #333;
-  background-color: #f1f1f1; /* Gris */
+  background-color: #f1f1f1; 
   border: 2px solid #ccc;
 }
 
@@ -32,10 +32,9 @@
   border-color: #bbb;
 }
 
-/* Nuevo estilo para el botón de agregar al carrito */
 .button-add-to-cart {
   color: #fff;
-  background-color: #007bff; /* Azul */
+  background-color: #007bff; 
   border: 2px solid #007bff;
 }
 
@@ -46,7 +45,7 @@
 
 .button-remove-from-cart {
   color: #fff;
-  background-color: #dc3545; /* Rojo */
+  background-color: #dc3545; 
   border: 2px solid #dc3545;
 }
 
@@ -57,7 +56,7 @@
 
 .button-checkout {
   color: #fff;
-  background-color: #007bff; /* Azul */
+  background-color: #007bff; 
   border: 2px solid #007bff;
 }
 
@@ -67,8 +66,8 @@
 }
 
 .button-add-to-cart {
-  background-color: #4caf50; /* Color de fondo verde */
-  color: #ffffff; /* Color del texto blanco */
+  background-color: #4caf50; 
+  color: #ffffff; 
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -77,10 +76,10 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 4px; /* Bordes redondeados */
+  border-radius: 4px; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button-add-to-cart:hover {
-  background-color: #45a049; /* Cambiar el color de fondo al pasar el mouse */
+  background-color: #45a049;
 }

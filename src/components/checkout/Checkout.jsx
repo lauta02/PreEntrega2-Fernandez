@@ -16,7 +16,7 @@ const Checkout = ({ onPurchaseComplete }) => {
         {!isPurchaseComplete ? (
           <>
             <h2>Finalizar Compra</h2>
-            {/* Contenido del formulario */}
+            {}
             <form>
               <label htmlFor="name">Nombre:</label>
               <input type="text" id="name" name="name" required />

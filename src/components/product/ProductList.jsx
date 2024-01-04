@@ -6,7 +6,7 @@ const ProductsList = ({ products, onAddToCart }) => {
     <div className="products-list">
       {products.map((product) => (
         <div key={product.id} className="product">
-          {/* ... Otro contenido del producto ... */}
+          {}
           <button
             className="button button-add-to-cart"
             onClick={() => onAddToCart(product)}

@@ -4,7 +4,6 @@ import { useCart } from '../context/CartContext';
 const FilterModal = ({ isOpen, onClose, uniqueBrands, onFilter }) => {
   const { cart } = useCart();
 
-  // Verifica si uniqueBrands es undefined antes de intentar mapearlo
   const brandsToRender = uniqueBrands || [];
 
   return (

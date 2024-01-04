@@ -26,7 +26,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1;
-  min-width: 200px; /* Ajusta el ancho según sea necesario */
+  min-width: 200px; 
 }
 
 .cart-dropdown ul {
@@ -43,11 +43,11 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #fff; /* Cambia el color de fondo a blanco */
+  background-color: #fff; 
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1;
-  min-width: 200px; /* Ajusta el ancho según sea necesario */
-  color: #000; /* Cambia el color del texto a negro */
+  min-width: 200px; 
+  color: #000; 
 }

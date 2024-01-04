@@ -8,9 +8,8 @@ import Contacto from './components/contacto/Contacto';
 import { CartProvider } from './components/context/CartContext';
 
 const App = () => {
-  // Ejemplo de datos de productos (sustitúyelo con tu lógica real)
   const productData = [
-    // ... tus datos de productos
+    
   ];
 
   return (

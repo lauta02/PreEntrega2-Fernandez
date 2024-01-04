@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
 
   const addToCart = (product) => {
-    console.log(product); // Agrega esto para depurar
+    console.log(product); 
     setCart((prevCart) => [...prevCart, product]);
     setTotal((prevTotal) => prevTotal + parseFloat(product.price));
   };
@@ -28,9 +28,8 @@ const CartProvider = ({ children }) => {
   };
 
   const buy = () => {
-    // Lógica para finalizar la compra (puedes ajustar según tus necesidades)
     console.log('Compra realizada. Gracias por tu compra!');
-    clearCart(); // Limpiar el carrito después de la compra
+    clearCart(); 
   };
 
   return (
