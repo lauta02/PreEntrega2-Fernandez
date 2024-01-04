@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './Product'; // Asegúrate de importar tu componente de producto
+import Product from './Product'; 
 
 const ProductsList = ({ products, onAddToCart }) => {
   return (
